@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/iconpill.png!sw800" type="image/x-icon">
+  <title>Ben10</title>
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: black;
+
+
+  background-image: url("img/123.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1{
+  position: relative;
+  top: -200px;
+  left: -430px;
+  color: #ffffff;
+}
+
+#foge {
+  color: rgb(255, 255, 255);
+  border: none;
+  position: relative;
+  top: 150px;
+  left: 490px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  background-image: url(img/pilula_azul.png);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  
+}
+
+.nhaaa {
+  color: white;
+  border: none;
+  position: relative;
+  top: 150px;
+  left: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  background-image: url(img/pilula_vermelha-removebg-preview.png);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  
+}
+
+.btn-voltar {
+  display: block;
+  margin: 0 auto 0px auto;
+  padding: 8px 16px;
+  background-color: #30303071;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', cursive, sans-serif;
+  font-style: italic;
+  transition: background-color 0.3s ease;
+}
+
+.btn-voltar {
+  position: absolute;
+  top: 540px;
+  left: 94%;
+}
+
+.btn-voltar:hover {
+  background-color: #fff3f361;
+}
+
+  </style>
+</head>
+<body>
+
+  <button id="foge">Não</button>
+
+<button class="nhaaa" onclick="window.location.href='dance.html'">Sim</button>
+
+<h1>Depois de ver tudo sobre o técnico de <br>
+  Desenvolvimento de Sistemas, você<br>
+   quer fazer esse curso técnico?</h1>
+
+   <button class="btn-voltar" onclick="window.location.href='index.html'">home</button>
+
+  <script>
+    const botao = document.getElementById("foge");
+
+    document.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      const rect = botao.getBoundingClientRect();
+      const botaoX = rect.left + rect.width / 2;
+      const botaoY = rect.top + rect.height / 2;
+
+      const distancia = Math.hypot(mouseX - botaoX, mouseY - botaoY);
+
+      if (distancia < 100) {
+        let novaX = Math.random() * (window.innerWidth - rect.width);
+        let novaY = Math.random() * (window.innerHeight - rect.height);
+        botao.style.left = novaX + "px";
+        botao.style.top = novaY + "px";
+      }
+    });
+  </script>
+</body>
+</html>
